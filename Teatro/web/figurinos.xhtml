@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Figurinos Teatro</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form>
+        </h:form>
+        <br></br>   
+        <h:form>
+            <p:commandButton id="cadastrar" value="Cadastrar Figurino"  onclick="PF('abrirCadastro').show()" />
+            <p:dialog header="Novo Cadastro" widgetVar="abrirCadastro" height="500" width="700" showEffect="fade" modal="true">
+                <h:form>
+                    <h:outputLabel value="Cadastrar Figurinos"/>
+                    <br/>
+                    <h:outputLabel value="Descrição"/>
+                    <h:inputText value="#{figurinoBean.figurino.descricao}"/>
+                    <br/>
+                    <h:outputLabel value="Cor"/>
+                    <h:inputText value="#{figurinoBean.figurino.cor}"/>
+                    <br/>
+                    <h:outputLabel value="Tamanho"/>
+                    <h:inputText value="#{figurinoBean.figurino.tamanho}"/>
+                    <br/>
+                    <h:outputLabel value="Época"/>
+                    <h:inputText value="#{figurinoBean.figurino.epoca}"/>
+                    <br/>
+                    <p:fileUpload value="#{figurinoBean.file}" mode="simple" skinSimple="true" auto="true" process="@this" update="img" listener="#{figurinoBean.handleFileUpload}"/>
+                    <br/>
+                    <h:outputLabel value="Custo"/>
+                    <h:inputText value="#{figurinoBean.figurino.custo}"/>
+                    <br/>
+                    <h:outputLabel value="Sala"/>
+                    <h:inputText value="#{figurinoBean.figurino.sala}"/>
+                    <br/>
+                    <h:outputLabel value="Armario"/>
+                    <h:inputText value="#{figurinoBean.figurino.armario}"/>
+                    <p:graphicImage id="img" value="#{figurinoBean.imagem}" width="200" cache="false"/>
+                    <p:commandButton id="salvar" value="Salvar Figurino" action="#{figurinoBean.salvar()}" onclick="PF('abrirEscrever').hide()" ajax="false"/>
+                </h:form>
+            </p:dialog>
+        </h:form>
+    </h:body>
+</html>

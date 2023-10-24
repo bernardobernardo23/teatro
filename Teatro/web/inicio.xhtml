@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+          
+      xmlns:p="http://primefaces.org/ui">
+    
+    <h:head>
+        <title>Início</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:commandButton value="Atores"/>
+            <br/>
+            <p:commandButton value="Figurinos" action="#{inicioBean.figurinos()}" ajax="false"/>
+            <br/>
+            <p:commandButton value="Peças"/>
+            <br/>
+            <p:commandButton value="Empréstimos"/>
+            <br/>
+            <p:commandButton value="Sobre"/>
+        </h:form>
+    </h:body>
+</html>
